@@ -1,0 +1,35 @@
+---
+title: "Kenya Power Token Analysis"
+output: html_notebook
+---
+
+This is an analysis of [Kenya Power](http://www.kplc.co.ke) prepaid meter tokens. The objective of the analysis is to discover 
+
+
+```{r}
+#load required libraries
+library(googlesheets)
+library(magrittr)
+```
+
+Get the data from Googlesheets
+
+```{r}
+#register app on Google
+my_sheets <- gs_ls()
+
+#regisiter Google sheet
+onsheet <- gs_title("KPLC TOKEN DATA")
+kplc <- onsheet %>% gs_read(ws = "Sheet1")
+
+```
+
+
+
+A preview of the dataset
+
+```{r}
+head(kplc)
+```
+
+The first task is to figure out if the token numbers 
